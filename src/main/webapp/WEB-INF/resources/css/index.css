@@ -1,0 +1,99 @@
+html, body {
+	font-family: 'Muli', sans-serif;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+	background-color: #ffc7c7;
+}
+
+.login-panel {
+	width: 35%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background-color: #fff7e1;
+}
+
+.register-panel {
+	width: 35%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;	
+	align-items: center;
+	height: 100%;
+	background-color: #fff7e1;
+}
+
+.login-panel .form {
+	max-width: 350px;
+}
+
+.login-panel .email-input {
+	margin-bottom: 10px;
+}
+
+.login-panel .password-input {
+	margin-bottom: 10px;
+}
+
+.register-panel .email-input {
+	margin-bottom: 10px;
+}
+
+.register-panel .password-input {
+	margin-bottom: 10px;
+}
+
+.no-outline-border:focus {
+	border-color: #ccc;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline: none;
+}
+
+.no-outline-border:focus:active {
+	outline: none;
+	background-color: #fff;
+	border-color: #ccc;
+}
+
+.login-button {
+	font-weight: 600;	
+}
+
+.login-button:hover{
+	background-color: #ffeaea;	
+}
+
+.register-button {
+	font-weight: 600;	
+}
+
+.register-button:hover{
+	background-color: #ffeaea;	
+}
+
+.upper-register-panel {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	flex-basis: 0;
+}
+
+.register-form {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	flex-basis: 0;
+}
+
+.lower-register-panel {
+	flex-grow: 1;
+	flex-basis: 0;
+}

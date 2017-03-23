@@ -1,0 +1,29 @@
+.container{
+    position: absolute;
+    background: #2e2f33;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.content{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    background: #2ebd59;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button{
+    border: none;
+    background-color: #2e2f33;
+    color: #ffffff;
+}
+
+.form-control:focus{
+    border-color: #2e2f33
+}
