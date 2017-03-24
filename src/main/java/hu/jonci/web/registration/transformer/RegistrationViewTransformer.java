@@ -12,6 +12,7 @@ public class RegistrationViewTransformer {
         RegistrationEntry registrationEntry = new RegistrationEntry();
         registrationEntry.setEmail(request.getEmail());
         registrationEntry.setPassword(request.getPassword());
+        registrationEntry.setRepassword(request.getRepassword());
         return registrationEntry;
     }
 

@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import hu.jonci.web.registration.domain.RegistrationRequest;
-import hu.jonci.web.registration.facade.RegistrationFacade;
+import hu.jonci.web.registration.facade.RegistrationViewFacade;
 
 @RestController
 public class RegistrationRestController {
     
     @Autowired
-    private RegistrationFacade registrationFacade;
+    private RegistrationViewFacade registrationFacade;
     
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public void register(@RequestBody RegistrationRequest request) {

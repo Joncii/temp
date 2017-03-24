@@ -8,7 +8,7 @@ import hu.jonci.web.registration.domain.RegistrationRequest;
 import hu.jonci.web.registration.transformer.RegistrationViewTransformer;
 
 @Component
-public class RegistrationFacade {
+public class RegistrationViewFacade {
     
     @Autowired
     private RegistrationService registrationService;

@@ -6,6 +6,8 @@ public class RegistrationEntry {
 
     private String password;
 
+    private String repassword;
+
     public String getEmail() {
         return email;
     }
@@ -20,6 +22,14 @@ public class RegistrationEntry {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRepassword() {
+        return repassword;
+    }
+
+    public void setRepassword(String repassword) {
+        this.repassword = repassword;
     }
 
 }

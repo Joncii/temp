@@ -7,10 +7,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String login() {
+    @RequestMapping(value = "/summary", method = RequestMethod.GET)
+    public String landingPage() {
         return "index";
     }
+    
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+        return "login";
+    }
+    
 //
 //    @RequestMapping(value = "/error", method = RequestMethod.GET)
 //    public String error() {

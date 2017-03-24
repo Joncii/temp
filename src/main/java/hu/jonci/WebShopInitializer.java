@@ -18,7 +18,7 @@ public class WebShopInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext container) throws ServletException {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-        rootContext.register(MongoConfiguration.class);
+        rootContext.register(MongoConfiguration.class, SecurityConfiguration.class);
         
         container.addListener(new ContextLoaderListener(rootContext));
         

@@ -1,26 +1,24 @@
 package hu.jonci.configuration;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
 
 @Configuration
 @EnableMongoRepositories(basePackages = "hu.jonci.dal.repository")
-public class MongoConfiguration {
+public class MongoConfiguration extends AbstractMongoConfiguration {
 
-    @Bean
-    public MongoClient mongo(){
-        MongoClientURI uri = new MongoClientURI("mongodb://localhost:27017");
-        return new MongoClient(uri);
+    @Override
+    protected String getDatabaseName() {
+        return "webshop";
     }
-    
-    @Bean
-    public MongoTemplate mongoTemplate(){
-        return new MongoTemplate(mongo(), "webshop");
+
+    @Override
+    public Mongo mongo() throws Exception {
+        return new MongoClient("localhost", 27017);
     }
     
 }
