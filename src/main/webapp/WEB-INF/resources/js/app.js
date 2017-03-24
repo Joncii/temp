@@ -4,24 +4,42 @@ app.config(['$routeProvider',
 	  function($routeProvider) {
 	    $routeProvider.
 	      when('/login', {
-	        templateUrl: 'templates/login.html',
+	        templateUrl: 'templates/login.html'
 	      }).
 	      when('/register', {
 	        templateUrl: 'templates/register.html',
+	        controller: 'RegisterController as ctrl'
 	      });
 	  }]);
 
-app.controller('RegisterController', function(){
+app.factory('RegisterDao', ['$http', function($http){
+	
+	return {
+		registerUser : function(user){
+			var userData = {
+				email : user.email,
+				password : user.password
+			};
+			
+			$http.post('/webshop/register', userData);
+		}
+	};
+	
+}]);
+
+app.controller('RegisterController', ['RegisterDao', function(RegisterDao){
 	var vm = this;
-	vm.email = 'default@email.com';
-	vm.password = 'default';
 	
-	vm.popup = popup;
+	vm.register = register;
 	
-	function popup(){
-		alert(vm.email);
+	function register(){
+		var user = {
+			email : vm.email,
+			password : vm.password
+		};
+		RegisterDao.registerUser(user);
 	}
-});
+}]);
 
 app.controller('LoginController', ['$window', function($window){
 	var vm = this;
