@@ -97,3 +97,21 @@ html, body {
 	flex-grow: 1;
 	flex-basis: 0;
 }
+
+.app-navigation {
+    background-color: #ffc7c7;
+    margin-bottom: 0px;
+    border: none;
+}
+
+.app-navigation .navbar-nav > .active > a {
+    background-color: #fff7e1;
+}
+
+.app-navigation .navbar-nav a {
+    font-size: 2rem;
+}
+
+.app-container {
+    background-color: #fff7e1;
+}

@@ -1,11 +1,14 @@
 var app = angular.module('app', [ 'ngRoute' ]);
 
 app.config([ '$routeProvider', function($routeProvider) {
-    $routeProvider.when('/login', {
-        templateUrl : 'templates/login.html'
-    }).when('/register', {
-        templateUrl : 'templates/register.html',
-        controller : 'RegisterController as ctrl'
+    $routeProvider.when('/summary', {
+        templateUrl : 'templates/summary.html'
+    })
+    .when('/', {
+        templateUrl : 'templates/summary.html'
+    })
+    .when('/register', {
+        templateUrl : 'templates/summary.html'
     });
 } ]);
 
