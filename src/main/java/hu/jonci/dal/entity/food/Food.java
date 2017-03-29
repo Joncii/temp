@@ -2,7 +2,15 @@ package hu.jonci.dal.entity.food;
 
 import java.util.Set;
 
+import javax.persistence.Id;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "food")
 public class Food {
+    
+    @Id
+    private String id;
 
     private String name;
 

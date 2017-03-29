@@ -9,6 +9,9 @@ app.config([ '$routeProvider', function($routeProvider) {
     })
     .when('/foodbase', {
         templateUrl : 'templates/foodbase.html'
+    })
+    .when('/addFood', {
+        templateUrl : 'templates/addFood.html'
     });
 } ]);
 
@@ -72,3 +75,33 @@ app.controller('NavbarController', function(){
     
     initActiveTab();
 });
+
+app.controller('AddFoodController', [ '$http', function($http){
+    var vm = this;
+    
+    vm.food = {
+    		carbohydrate : {
+    			quantity : 0,
+    			metric : 'g'
+    		},
+    		protein : {
+    			quantity : 0,
+    			metric : 'g'
+    		},
+    		fat : {
+    			quantity : 0,
+    			metric : 'g'
+    		}
+    }
+    
+    function retrieveMetrics(){
+        $http.get("/webshop/food/metrics").then(
+        		function(response){
+        			vm.metrics = response.data;
+        		},
+        		function(){});
+    }
+    
+    retrieveMetrics();
+    
+}]);
