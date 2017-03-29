@@ -7,8 +7,8 @@ app.config([ '$routeProvider', function($routeProvider) {
     .when('/', {
         templateUrl : 'templates/summary.html'
     })
-    .when('/register', {
-        templateUrl : 'templates/summary.html'
+    .when('/foodbase', {
+        templateUrl : 'templates/foodbase.html'
     });
 } ]);
 
@@ -50,3 +50,25 @@ app.controller('LoginController', [ '$window', function($window) {
         $window.location.href = $window.location.host;
     }
 } ]);
+
+app.controller('NavbarController', function(){
+    var vm = this;
+    var activeTab;
+    
+    vm.changeTab = changeTab;
+    
+    function changeTab(id){
+        var newTab = angular.element(document).find('#' + id);
+        if(newTab[0].id != activeTab[0].id){
+            newTab.addClass('active');
+            activeTab.removeClass('active');
+            activeTab = newTab;
+        }
+    }
+    
+    function initActiveTab(){
+        activeTab = angular.element(document).find('#summary');
+    }
+    
+    initActiveTab();
+});
