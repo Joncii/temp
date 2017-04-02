@@ -5,8 +5,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import hu.jonci.dal.entity.UserEntity;
-import hu.jonci.dal.repository.UserRepository;
+import hu.jonci.dal.user.entity.UserEntity;
+import hu.jonci.dal.user.repository.UserRepository;
 
 public class DefaultUserDetailsService implements UserDetailsService {
     

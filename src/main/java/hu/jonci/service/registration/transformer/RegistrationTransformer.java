@@ -2,7 +2,7 @@ package hu.jonci.service.registration.transformer;
 
 import org.springframework.stereotype.Component;
 
-import hu.jonci.dal.entity.UserEntity;
+import hu.jonci.dal.user.entity.UserEntity;
 import hu.jonci.service.registration.domain.RegistrationEntry;
 
 @Component

@@ -141,3 +141,19 @@ html, body {
 .food-information-panel {
     flex-grow: 1;
 }
+
+.add-food-form {
+    align-self: center;
+}
+
+.add-food-form-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 40%;
+    height: 50%;
+    background-color: #ffc7c7;
+    border-radius: 10px;
+}

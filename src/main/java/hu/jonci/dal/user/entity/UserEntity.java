@@ -1,4 +1,4 @@
-package hu.jonci.dal.entity;
+package hu.jonci.dal.user.entity;
 
 import javax.persistence.Id;
 

@@ -54,9 +54,9 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter implements Applica
         engine.setTemplateResolver(templateResolver());
         return engine;
     }
-    
+
     @Bean
-    public MessageSource messageSource(){
+    public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("i18n/messages");
         messageSource.setDefaultEncoding("UTF-8");
@@ -81,5 +81,5 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter implements Applica
     public void setApplicationContext(ApplicationContext arg0) throws BeansException {
         this.applicationContext = arg0;
     }
-    
+
 }

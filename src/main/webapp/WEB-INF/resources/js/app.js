@@ -76,20 +76,23 @@ app.controller('NavbarController', function(){
     initActiveTab();
 });
 
-app.controller('AddFoodController', [ '$http', function($http){
+app.controller('AddFoodController', [ '$http', '$window', function($http, $window){
     var vm = this;
     
+    vm.addFood = addFood;
+    
     vm.food = {
+    		name : "",
     		carbohydrate : {
-    			quantity : 0,
+    			value : 0,
     			metric : 'g'
     		},
     		protein : {
-    			quantity : 0,
+    			value : 0,
     			metric : 'g'
     		},
     		fat : {
-    			quantity : 0,
+    			value : 0,
     			metric : 'g'
     		}
     }
@@ -103,5 +106,13 @@ app.controller('AddFoodController', [ '$http', function($http){
     }
     
     retrieveMetrics();
+    
+    function addFood(){
+    	$http.put("/webshop/food/add", vm.food).then(redirectToAddFood, redirectToAddFood);
+    }
+    
+    function redirectToAddFood(){
+    	$window.location.href = '/webshop/#addFood';
+    }
     
 }]);
