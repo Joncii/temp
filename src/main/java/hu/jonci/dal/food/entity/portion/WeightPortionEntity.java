@@ -1,6 +1,8 @@
-package hu.jonci.dal.food.entity;
+package hu.jonci.dal.food.entity.portion;
 
-public class PortionEntity {
+import hu.jonci.dal.food.entity.WeightMetric;
+
+public class WeightPortionEntity {
 
     private double value;
 

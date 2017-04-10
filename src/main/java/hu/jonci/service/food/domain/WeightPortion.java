@@ -2,7 +2,7 @@ package hu.jonci.service.food.domain;
 
 import hu.jonci.dal.food.entity.WeightMetric;
 
-public class Portion {
+public class WeightPortion {
 
     private Double value;
 

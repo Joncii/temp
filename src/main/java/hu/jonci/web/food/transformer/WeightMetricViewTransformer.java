@@ -25,4 +25,22 @@ public class WeightMetricViewTransformer {
         return metric;
     }
 
+    public String transform(WeightMetric weightMetric) {
+        String metricView;
+        switch (weightMetric) {
+        case MICROGRAMMS:
+            metricView = "μg";
+            break;
+        case MILLIGRAMMS:
+            metricView = "mg";
+            break;
+        case GRAMMS:
+            metricView = "g";
+            break;
+        default:
+            metricView = "g";
+        }
+        return metricView;
+    }
+
 }

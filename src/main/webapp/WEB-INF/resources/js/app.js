@@ -84,16 +84,22 @@ app.controller('AddFoodController', [ '$http', '$window', function($http, $windo
     vm.food = {
     		name : "",
     		carbohydrate : {
-    			value : 0,
-    			metric : 'g'
+    			weightPortion : {
+    				value : 0,
+        			metric : 'g'
+    			}
     		},
     		protein : {
-    			value : 0,
-    			metric : 'g'
+    			weightPortion : {
+    				value : 0,
+        			metric : 'g'
+    			}
     		},
     		fat : {
-    			value : 0,
-    			metric : 'g'
+    			weightPortion : {
+    				value : 0,
+        			metric : 'g'
+    			}
     		}
     }
     

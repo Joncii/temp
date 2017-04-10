@@ -1,8 +1,8 @@
 package hu.jonci.service.food.domain;
 
-import java.util.Set;
-
-import hu.jonci.service.food.domain.nutrient.NutrientPortion;
+import hu.jonci.service.food.domain.portion.CarbohydratePortion;
+import hu.jonci.service.food.domain.portion.FatPortion;
+import hu.jonci.service.food.domain.portion.ProteinPortion;
 
 public class Food {
 
@@ -10,9 +10,13 @@ public class Food {
 
     private String name;
 
-    private Set<NutrientPortion> nutritionPortions;
+    private CarbohydratePortion carbohydratePortion;
 
-    private Portion portion;
+    private ProteinPortion proteinPortion;
+
+    private FatPortion fatPortion;
+
+    private WeightPortion portion;
 
     public String getId() {
         return id;
@@ -30,20 +34,36 @@ public class Food {
         this.name = name;
     }
 
-    public Set<NutrientPortion> getNutritionPortions() {
-        return nutritionPortions;
-    }
-
-    public void setNutritionPortions(Set<NutrientPortion> nutritionPortions) {
-        this.nutritionPortions = nutritionPortions;
-    }
-
-    public Portion getPortion() {
+    public WeightPortion getPortion() {
         return portion;
     }
 
-    public void setPortion(Portion portion) {
+    public void setPortion(WeightPortion portion) {
         this.portion = portion;
+    }
+
+    public CarbohydratePortion getCarbohydratePortion() {
+        return carbohydratePortion;
+    }
+
+    public void setCarbohydratePortion(CarbohydratePortion carbohydratePortion) {
+        this.carbohydratePortion = carbohydratePortion;
+    }
+
+    public ProteinPortion getProteinPortion() {
+        return proteinPortion;
+    }
+
+    public void setProteinPortion(ProteinPortion proteinPortion) {
+        this.proteinPortion = proteinPortion;
+    }
+
+    public FatPortion getFatPortion() {
+        return fatPortion;
+    }
+
+    public void setFatPortion(FatPortion fatPortion) {
+        this.fatPortion = fatPortion;
     }
 
 }

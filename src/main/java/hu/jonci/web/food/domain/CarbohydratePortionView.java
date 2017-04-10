@@ -2,24 +2,14 @@ package hu.jonci.web.food.domain;
 
 public class CarbohydratePortionView {
 
-    private Double value;
+    private WeightPortionView weightPortion;
 
-    private String metric;
-
-    public Double getValue() {
-        return value;
+    public WeightPortionView getWeightPortion() {
+        return weightPortion;
     }
 
-    public void setValue(Double value) {
-        this.value = value;
-    }
-
-    public String getMetric() {
-        return metric;
-    }
-
-    public void setMetric(String metric) {
-        this.metric = metric;
+    public void setWeightPortion(WeightPortionView weightPortion) {
+        this.weightPortion = weightPortion;
     }
 
 }

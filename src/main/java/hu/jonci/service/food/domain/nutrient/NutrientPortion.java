@@ -1,12 +1,12 @@
 package hu.jonci.service.food.domain.nutrient;
 
-import hu.jonci.service.food.domain.Portion;
+import hu.jonci.service.food.domain.WeightPortion;
 
 public class NutrientPortion {
 
     private Nutrient nutrient;
 
-    private Portion portion;
+    private WeightPortion portion;
 
     public Nutrient getNutrient() {
         return nutrient;
@@ -16,11 +16,11 @@ public class NutrientPortion {
         this.nutrient = nutrient;
     }
 
-    public Portion getPortion() {
+    public WeightPortion getPortion() {
         return portion;
     }
 
-    public void setPortion(Portion portion) {
+    public void setPortion(WeightPortion portion) {
         this.portion = portion;
     }
 

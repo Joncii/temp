@@ -13,11 +13,11 @@
       <label class="col-sm-5 control-label" for="carbohydrates">Carbohydrates</label>
       <div class="col-sm-4">
         <input type="number" step="0.1" min="0" class="form-control"
-          id="carbohydrates" ng-model="ctrl.food.carbohydrate.value">
+          id="carbohydrates" ng-model="ctrl.food.carbohydrate.weightPortion.value">
       </div>
       <div class="col-sm-3 selectContainer">
         <select class="form-control" name="metric"
-          ng-model="ctrl.food.carbohydrate.metric">
+          ng-model="ctrl.food.carbohydrate.weightPortion.metric">
           <option ng-repeat="metric in ctrl.metrics">{{metric}}</option>
         </select>
       </div>
@@ -26,11 +26,11 @@
       <label class="col-sm-5 control-label" for="protein">Protein</label>
       <div class="col-sm-4">
         <input type="number" step="0.1" min="0" class="form-control" id="protein"
-          ng-model="ctrl.food.protein.value">
+          ng-model="ctrl.food.protein.weightPortion.value">
       </div>
       <div class="col-sm-3 selectContainer">
         <select class="form-control" name="metric"
-          ng-model="ctrl.food.protein.metric">
+          ng-model="ctrl.food.protein.weightPortion.metric">
           <option ng-repeat="metric in ctrl.metrics">{{metric}}</option>
         </select>
       </div>
@@ -39,11 +39,11 @@
       <label class="col-sm-5 control-label" for="fat">Fat</label>
       <div class="col-sm-4">
         <input type="number" step="0.1" min="0" class="form-control" id="fat"
-          ng-model="ctrl.food.fat.value">
+          ng-model="ctrl.food.fat.weightPortion.value">
       </div>
       <div class="col-sm-3 selectContainer">
         <select class="form-control" name="metric"
-          ng-model="ctrl.food.fat.metric">
+          ng-model="ctrl.food.fat.weightPortion.metric">
           <option ng-repeat="metric in ctrl.metrics">{{metric}}</option>
         </select>
       </div>

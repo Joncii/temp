@@ -1,10 +1,13 @@
 package hu.jonci.dal.food.entity;
 
-import java.util.Set;
-
 import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import hu.jonci.dal.food.entity.portion.CarbohydratePortionEntity;
+import hu.jonci.dal.food.entity.portion.FatPortionEntity;
+import hu.jonci.dal.food.entity.portion.ProteinPortionEntity;
+import hu.jonci.dal.food.entity.portion.WeightPortionEntity;
 
 @Document(collection = "food")
 public class FoodEntity {
@@ -16,23 +19,19 @@ public class FoodEntity {
 
     private EnergyEntity energy;
 
-    private Set<NutrientPortionEntity> nutrientPortions;
+    private CarbohydratePortionEntity carbohydratePortion;
 
-    private PortionEntity portion;
+    private ProteinPortionEntity proteinPortion;
 
-    public Set<NutrientPortionEntity> getNutrientPortions() {
-        return nutrientPortions;
-    }
+    private FatPortionEntity fatPortion;
 
-    public void setNutrientPortions(Set<NutrientPortionEntity> nutrientPortions) {
-        this.nutrientPortions = nutrientPortions;
-    }
+    private WeightPortionEntity portion;
 
-    public PortionEntity getPortion() {
+    public WeightPortionEntity getPortion() {
         return portion;
     }
 
-    public void setPortion(PortionEntity portion) {
+    public void setPortion(WeightPortionEntity portion) {
         this.portion = portion;
     }
 
@@ -58,6 +57,30 @@ public class FoodEntity {
 
     public void setEnergy(EnergyEntity energy) {
         this.energy = energy;
+    }
+
+    public CarbohydratePortionEntity getCarbohydratePortion() {
+        return carbohydratePortion;
+    }
+
+    public void setCarbohydratePortion(CarbohydratePortionEntity carbohydratePortion) {
+        this.carbohydratePortion = carbohydratePortion;
+    }
+
+    public ProteinPortionEntity getProteinPortion() {
+        return proteinPortion;
+    }
+
+    public void setProteinPortion(ProteinPortionEntity proteinPortion) {
+        this.proteinPortion = proteinPortion;
+    }
+
+    public FatPortionEntity getFatPortion() {
+        return fatPortion;
+    }
+
+    public void setFatPortion(FatPortionEntity fatPortion) {
+        this.fatPortion = fatPortion;
     }
 
 }

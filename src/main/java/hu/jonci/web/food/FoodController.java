@@ -1,7 +1,6 @@
 package hu.jonci.web.food;
 
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -15,15 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import hu.jonci.dal.food.entity.WeightMetric;
 import hu.jonci.service.food.FoodService;
-import hu.jonci.service.food.domain.Food;
 import hu.jonci.web.food.domain.AddFoodRequest;
+import hu.jonci.web.food.domain.ListFoodResponse;
 import hu.jonci.web.food.transformer.AddFoodRequestTransformer;
+import hu.jonci.web.food.transformer.ListFoodRequestTransformer;
 
 @RestController
 public class FoodController {
     
     @Autowired
     private AddFoodRequestTransformer transformer;
+    
+    @Autowired
+    private ListFoodRequestTransformer listFoodRequestTransformer;
     
     @Autowired
     private FoodService foodService;
@@ -40,8 +43,8 @@ public class FoodController {
     }
     
     @RequestMapping(value = "/foods", method = RequestMethod.GET)
-    public Set<Food> listFoods(){
-        return foodService.listFoods();
+    public ListFoodResponse listFoods(){
+        return listFoodRequestTransformer.transform(foodService.listFoods());
     }
 
 }

@@ -1,40 +1,38 @@
 package hu.jonci.web.food.transformer;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import hu.jonci.service.food.domain.Food;
-import hu.jonci.service.food.domain.nutrient.NutrientPortion;
 import hu.jonci.web.food.domain.AddFoodRequest;
+import hu.jonci.web.food.domain.WeightPortionView;
 
 @Component
 public class AddFoodRequestTransformer {
 
     @Autowired
-    private CarbohydrateViewTransformer carbohydrateViewTransformer;
-    
+    private CarbohydratePortionViewTransformer carbohydrateViewTransformer;
+
     @Autowired
-    private ProteinViewTransformer proteinViewTransformer;
-    
+    private ProteinPortionViewTransformer proteinViewTransformer;
+
     @Autowired
-    private FatViewTransformer fatViewTransformer;
-    
+    private FatPortionViewTransformer fatViewTransformer;
+
     @Autowired
-    private PortionViewTransformer portionViewTransformer;
-    
-    public Food transform(AddFoodRequest request){
+    private WeightPortionViewTransformer portionViewTransformer;
+
+    public Food transform(AddFoodRequest request) {
         Food food = new Food();
         food.setName(request.getName());
-        Set<NutrientPortion> nutrientPortions = new HashSet<>();
-        nutrientPortions.add(carbohydrateViewTransformer.transform(request.getCarbohydrate()));
-        nutrientPortions.add(proteinViewTransformer.transform(request.getProtein()));
-        nutrientPortions.add(fatViewTransformer.transform(request.getFat()));
-        food.setNutritionPortions(nutrientPortions);
-        food.setPortion(portionViewTransformer.transform(100.0, "g"));
+        food.setCarbohydratePortion(carbohydrateViewTransformer.transform(request.getCarbohydrate()));
+        food.setProteinPortion(proteinViewTransformer.transform(request.getProtein()));
+        food.setFatPortion(fatViewTransformer.transform(request.getFat()));
+        WeightPortionView weightPortionView = new WeightPortionView();
+        weightPortionView.setMetric("g");
+        weightPortionView.setValue(100.0);
+        food.setPortion(portionViewTransformer.transform(weightPortionView));
         return food;
     }
-    
+
 }
