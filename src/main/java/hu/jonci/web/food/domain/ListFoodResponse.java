@@ -4,13 +4,13 @@ import java.util.Set;
 
 public class ListFoodResponse {
 
-    private Set<FoodView> foods;
+    private Set<FoodNameView> foods;
 
-    public Set<FoodView> getFoods() {
+    public Set<FoodNameView> getFoods() {
         return foods;
     }
 
-    public void setFoods(Set<FoodView> foods) {
+    public void setFoods(Set<FoodNameView> foods) {
         this.foods = foods;
     }
 

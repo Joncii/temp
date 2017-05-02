@@ -2,6 +2,7 @@ package hu.jonci.service.food.dao;
 
 import java.util.Set;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +27,11 @@ public class DefaultFoodDao implements FoodDao {
     @Override
     public Set<Food> listFoods() {
         return foodTransformer.transformEntities(foodRepository.findAll());
+    }
+
+    @Override
+    public Food find(ObjectId objectId) {
+        return foodTransformer.transformEntity(foodRepository.findOne(objectId));
     }
 
 }

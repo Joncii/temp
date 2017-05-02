@@ -122,3 +122,29 @@ app.controller('AddFoodController', [ '$http', '$window', function($http, $windo
     }
     
 }]);
+
+app.controller('FoodBaseController', [ '$http', function($http){
+	var vm = this;
+	
+	vm.shownFood = null;
+	
+	vm.retrieveFood = retrieveFood;
+	
+	function retrieveFoods(){
+		$http.get("/webshop/foods").then(
+        		function(response){
+        			vm.foodList = response.data;
+        		},
+        		function(){});
+	}
+	
+	function retrieveFood(id){
+		$http.get("/webshop/food/" + id).then(
+        		function(response){
+        			vm.shownFood = response.data;
+        		},
+        		function(){});
+	}
+	
+	retrieveFoods();
+}]);

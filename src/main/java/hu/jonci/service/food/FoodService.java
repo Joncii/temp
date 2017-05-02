@@ -2,6 +2,7 @@ package hu.jonci.service.food;
 
 import java.util.Set;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,10 @@ public class FoodService {
     
     public Set<Food> listFoods(){
         return foodDao.listFoods();
+    }
+    
+    public Food find(ObjectId objectId){
+        return foodDao.find(objectId);
     }
 
 }

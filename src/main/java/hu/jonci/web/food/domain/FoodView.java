@@ -2,6 +2,8 @@ package hu.jonci.web.food.domain;
 
 public class FoodView {
 
+    private String id;
+
     private String name;
 
     private CarbohydratePortionView carbohydrate;
@@ -40,6 +42,14 @@ public class FoodView {
 
     public void setFat(FatPortionView fat) {
         this.fat = fat;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
 }
