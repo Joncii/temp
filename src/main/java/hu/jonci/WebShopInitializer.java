@@ -11,13 +11,14 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 import hu.jonci.configuration.MongoConfiguration;
 import hu.jonci.configuration.MvcConfiguration;
+import hu.jonci.configuration.SecurityConfiguration;
 
 public class WebShopInitializer implements WebApplicationInitializer {
 
     @Override
     public void onStartup(ServletContext container) throws ServletException {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-        rootContext.register(MongoConfiguration.class);
+        rootContext.register(MongoConfiguration.class, SecurityConfiguration.class);
         
         container.addListener(new ContextLoaderListener(rootContext));
         
